@@ -1,3 +1,4 @@
+"use strict";
 (function($) {
     $(document).ready(function(){
         const canvasTable = $('#pixel_canvas');
@@ -43,6 +44,7 @@
             canvasTable.on('mousedown', function(event) {
                 // Only for left mouse button
                 if (event.which === 1) {
+                    draw(event);
                     canvasTable.on('mousemove', 'td', draw);
                     $(window).on('mouseup', function() {
                         canvasTable.off('mousemove');
