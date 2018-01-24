@@ -38,11 +38,16 @@
             });
 
             canvasTable.on('click', 'td', draw);
-            canvasTable.on('mousedown', function() {
-                canvasTable.on('mousemove', 'td', draw);
-                $(window).on('mouseup', function() {
-                    canvasTable.off('mousemove');
-                });
+
+            // Draw while holding left mouse button down
+            canvasTable.on('mousedown', function(event) {
+                // Only for left mouse button
+                if (event.which === 1) {
+                    canvasTable.on('mousemove', 'td', draw);
+                    $(window).on('mouseup', function() {
+                        canvasTable.off('mousemove');
+                    });
+                }
             });
         }
 
