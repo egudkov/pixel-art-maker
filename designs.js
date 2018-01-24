@@ -33,6 +33,10 @@
                 event.preventDefault();
             });
 
+            $('#canvasCleaner').click(function() {
+                $('td').css('background-color', '');
+            });
+
             canvasTable.on('click', 'td', draw);
             canvasTable.on('mousedown', function() {
                 canvasTable.on('mousemove', 'td', draw);
