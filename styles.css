@@ -34,6 +34,7 @@ tr {
 
 td {
     width: 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
