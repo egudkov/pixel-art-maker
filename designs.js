@@ -55,5 +55,10 @@
             const color = colorPicker.val();
             $(event.target).css('background-color', color);
         }
+
+        function erase(event) {
+            const color = '';
+            $(event.target).css('background-color', color);
+        }
     });
 })(jQuery);
