@@ -3,13 +3,14 @@
     $(document).ready(function(){
         const canvasTable = $('#pixel_canvas');
         const colorPicker = $('#colorPicker');
+        const showHideBordersBtn = $('#input_show_hide_borders');
 
         $('#sizePicker').submit(makeGrid);
 
         function makeGrid(event) {
             event.preventDefault();
-
             canvasTable.empty();
+
             const height = $('#input_height').val();
             const width = $('#input_width').val();
 
@@ -22,6 +23,7 @@
                 tableRows.append('<td></td>');
             }
 
+            showHideBorders();
             setupListeners();
         }
 
@@ -34,11 +36,8 @@
                 event.preventDefault();
             });
 
-            $('#canvasCleaner').click(function() {
-                $('td').css('background-color', '');
-            });
-
             canvasTable.on('click', 'td', draw);
+            showHideBordersBtn.on('click', showHideBorders);
 
             // Draw while holding left mouse button down
             canvasTable.on('mousedown', function(event) {
@@ -56,6 +55,16 @@
         function draw(event) {
             const color = colorPicker.val();
             $(event.target).css('background-color', color);
+        }
+
+        function showHideBorders() {
+            if (showHideBordersBtn[0].checked) {
+                canvasTable.find('tr').css('border', '');
+                canvasTable.find('td').css('border', '');
+            } else {
+                canvasTable.find('tr').css('border', '0');
+                canvasTable.find('td').css('border', '0');
+            }
         }
 
         function erase(event) {

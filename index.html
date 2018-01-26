@@ -13,20 +13,48 @@
 <body>
     <h1>Lab: Pixel Art Maker</h1>
 
-    <h2>Choose Grid Size</h2>
-    <form id="sizePicker">
-        Grid Height:
-        <input type="number" id="input_height" name="height" min="1" max="50" value="20">
-        Grid Width:
-        <input type="number" id="input_width" name="width" min="1" max="50" value="20">
-        <input type="submit">
-    </form>
+    <div class="container">
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
-    <input type="button" id="canvasCleaner" value="Clear Canvas">
+        <div class="menu-container">
+            <form id="sizePicker">
+                <div class="input_wrapper">
+                    <label>
+                        Width (px)
+                        <br>
+                        <input type="number" id="input_width" name="width" min="1" max="50" value="20">
+                    </label>
+                </div>
+                <div class="input_wrapper">
+                    <label>
+                        Height (px)
+                        <br>
+                        <input type="number" id="input_height" name="height" min="1" max="50" value="20">
+                    </label>
+                </div>
+                <div class="input_wrapper">
+                    <input type="checkbox" id="input_show_hide_borders" name="borders" checked>
+                    <label for="input_show_hide_borders">Show borders</label>
+                </div>
+                <div class="input_wrapper">
+                    <input type="submit" value="NEW / CLEAR">
+                </div>
+            </form>
+        </div>
 
-    <h2>Design Canvas</h2>
-    <table id="pixel_canvas"></table>
+        <div class="pixel-canvas-container">
+            <table id="pixel_canvas"></table>
+        </div>
+
+        <div class="color-palette-container">
+            <input type="color" id="colorPicker">
+            <div class="color-palette">
+                <div class="color-block black">
+                </div>
+                <div class="color-block white">
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
