@@ -67,17 +67,15 @@ td {
 table {
     border-collapse: collapse;
     margin: 0 auto;
-    width: 30vmax;
-    height: 30vmax;
 }
 
 tr {
-    /* height: 20px; */
+    height: 20px;
     box-sizing: border-box;
 }
 
 td {
-    /* width: 20px; */
+    width: 20px;
     padding: 0;
     box-sizing: border-box;
 }
