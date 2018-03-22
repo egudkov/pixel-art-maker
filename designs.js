@@ -1,6 +1,6 @@
 "use strict";
-(function($) {
-    $(document).ready(function(){
+(function ($) {
+    $(document).ready(function () {
         const canvasTable = $('#pixel_canvas');
         const colorPicker = $('#colorPicker');
         const showHideBordersBtn = $('#input_show_hide_borders');
@@ -29,10 +29,10 @@
 
         function setupListeners() {
             // Prevents the dragging of table cells while drawing
-            canvasTable.on('dragstart', function(event) {
+            canvasTable.on('dragstart', function (event) {
                 event.preventDefault();
             });
-            canvasTable.on('drop', function(event) {
+            canvasTable.on('drop', function (event) {
                 event.preventDefault();
             });
 
@@ -40,12 +40,12 @@
             showHideBordersBtn.on('click', showHideBorders);
 
             // Draw while holding left mouse button down
-            canvasTable.on('mousedown', function(event) {
+            canvasTable.on('mousedown', function (event) {
                 // Only for left mouse button
                 if (event.which === 1) {
                     draw(event);
                     canvasTable.on('mousemove', 'td', draw);
-                    $(window).on('mouseup', function() {
+                    $(window).on('mouseup', function () {
                         canvasTable.off('mousemove');
                     });
                 }
@@ -67,9 +67,9 @@
             }
         }
 
-        function erase(event) {
+        /* function erase(event) {
             const color = '';
             $(event.target).css('background-color', color);
-        }
+        } */
     });
 })(jQuery);
