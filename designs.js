@@ -5,6 +5,11 @@
         const colorPicker = $('#colorPicker');
         const showHideBordersBtn = $('#input_show_hide_borders');
 
+        // Example picture
+        canvasTable.load('./pixel-smile.html');
+        showHideBorders();
+        setupListeners();
+
         $('#sizePicker').submit(makeGrid);
 
         function makeGrid(event) {
